@@ -155,6 +155,7 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
             case R.id.iv_rec_right:
                 Intent intent = new Intent(getContext(), SearchActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.in_from_right,R.anim.out_to_bot);
                 break;
         }
 
