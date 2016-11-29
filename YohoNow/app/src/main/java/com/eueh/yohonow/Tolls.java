@@ -44,7 +44,5 @@ public class Tolls {
         }
 
     }
-    //裁剪圆形图片
-
 
 }

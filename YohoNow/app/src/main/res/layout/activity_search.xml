@@ -4,28 +4,53 @@
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eueh.yohonow.SearchActivity"
-    android:orientation="vertical">
-<LinearLayout
-    android:background="@color/coloWhite"
-    android:padding="10dp"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    tools:context="com.eueh.yohonow.SearchActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/coloWhite"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        android:background="#ececec">
-<ImageView
-    android:layout_marginLeft="9dp"
-    android:layout_marginTop="8dp"
-    android:layout_width="18dp"
-    android:layout_height="18dp"
-    android:background="@mipmap/search_1"
-    />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="8dp"
+                android:background="@mipmap/search_1" />
+            <EditText
+                android:textSize="14sp"
+                android:layout_marginLeft="2dp"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:hint="请输入搜索关键字"
+                android:layout_width="285dp"
+                android:layout_height="match_parent"
+                android:background="@null" />
+            <LinearLayout
+                android:background="@color/coloWhite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@mipmap/search_2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-</LinearLayout>
 </LinearLayout>

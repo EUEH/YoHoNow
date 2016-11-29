@@ -57,7 +57,7 @@ public class ColumnAdapter extends BaseAdapter {
         }
         Picasso.with(context).load(data.getData().get(i).getCover()).into(holder.ivbody);
         holder.tvbodytop.setText(data.getData().get(i).getSummary());
-        holder.tvbodybot.setText(data.getData().get(i).getTotal());
+        holder.tvbodybot.setText("更新至"+data.getData().get(i).getTotal()+"篇");
 
         return view;
     }

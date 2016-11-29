@@ -26,7 +26,7 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
     private Context context;
     private Beancover data;
-    private ArrayList<Integer>dataNew;
+    private ArrayList<Integer> dataNew;
 
     public MyFancyCoverFlowAdapter(Context context) {
         this.context = context;
@@ -44,11 +44,11 @@ public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
     @Override
     public View getCoverFlowItem(int position, View reusableView, ViewGroup parent) {
         ViewHolder holder;
-        if (reusableView ==null){
-            reusableView = LayoutInflater.from(context).inflate(R.layout.item_com_head_bot_in,null);
+        if (reusableView == null) {
+            reusableView = LayoutInflater.from(context).inflate(R.layout.item_com_head_bot_in, null);
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-            int width = wm.getDefaultDisplay().getWidth()+600;
-            reusableView.setLayoutParams(new FancyCoverFlow.LayoutParams(width / 3 ,FancyCoverFlow.LayoutParams.WRAP_CONTENT));
+            int width = wm.getDefaultDisplay().getWidth() + 600;
+            reusableView.setLayoutParams(new FancyCoverFlow.LayoutParams(width / 3, FancyCoverFlow.LayoutParams.WRAP_CONTENT));
             holder = new ViewHolder();
             holder.linearLayout = (LinearLayout) reusableView.findViewById(R.id.ll_com_bot_in_one);
             holder.ivOne = (ImageView) reusableView.findViewById(R.id.iv_com_bot_in_one);
@@ -62,35 +62,42 @@ public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
             holder.tvSix = (TextView) reusableView.findViewById(R.id.tv_com_bot_in_six);
             holder.tvSeven = (TextView) reusableView.findViewById(R.id.tv_com_bot_in_seven);
             reusableView.setTag(holder);
-        }else {
+        } else {
             holder = (ViewHolder) reusableView.getTag();
         }
-        //
-        if (position == 0){
+        //给前后加上图片
+        if (position == 0) {
             holder.linearLayout.setBackgroundResource(R.mipmap.yohocommid1);
-        }else if (position == data.getData().getForumInfo().size() + 1){
+        } else if (position == data.getData().getForumInfo().size() + 1) {
             holder.linearLayout.setBackgroundResource(R.mipmap.yohocommid1);
-        }else {
-            Glide.with(context).load(data.getData().getForumInfo().get(position-1).getForumPic()).into(holder.ivBack);
-            Glide.with(context).load(Tolls.cutStrings(data.getData().getForumInfo().get(position-1).getHotPost().getUser().getHeadIcon())).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivOne);
-            Glide.with(context).load(Tolls.cutStrings(data.getData().getForumInfo().get(position-1).getNewPost().getUser().getHeadIcon())).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivTwo);
-            holder.tvOne.setText(data.getData().getForumInfo().get(position-1).getForumName());
-            holder.tvTwo.setText("帖子"+String.valueOf(data.getData().getForumInfo().get(position-1).getPostsNum()));
-            holder.tvThree.setText("回复"+String.valueOf(data.getData().getForumInfo().get(position-1).getCommentsNum()));
-            holder.tvFour.setText("赞"+String.valueOf(data.getData().getForumInfo().get(position-1).getPraiseNum()));
-            holder.tvFive.setText(data.getData().getForumInfo().get(position-1).getHotPost().getPostsTitle());
-            holder.tvSix.setText(data.getData().getForumInfo().get(position-1).getNewPost().getPostsTitle());
-            holder.tvSeven.setText(String.valueOf(data.getData().getForumInfo().get(position-1).getOneDayAddNum()+"条更新> "));
+        } else {
+            Glide.with(context).load(data.getData().getForumInfo().get(position - 1).getForumPic()).into(holder.ivBack);
+            Glide.with(context).load(Tolls.cutStrings(data.getData().getForumInfo().get(position - 1).getHotPost().getUser().getHeadIcon())).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivOne);
+            Glide.with(context).load(Tolls.cutStrings(data.getData().getForumInfo().get(position - 1).getNewPost().getUser().getHeadIcon())).bitmapTransform(new CropCircleTransformation(context)).into(holder.ivTwo);
+            holder.tvOne.setText(data.getData().getForumInfo().get(position - 1).getForumName());
+            holder.tvTwo.setText("帖子" + String.valueOf(data.getData().getForumInfo().get(position - 1).getPostsNum()));
+            holder.tvThree.setText("回复" + String.valueOf(data.getData().getForumInfo().get(position - 1).getCommentsNum()));
+            holder.tvFour.setText("赞" + String.valueOf(data.getData().getForumInfo().get(position - 1).getPraiseNum()));
 
+            //判断接口中的字段是否是 "",是的话,加载另一个
+            if (data.getData().getForumInfo().get(position - 1).getHotPost().getPostsTitle() == "") {
+                holder.tvFive.setText(data.getData().getForumInfo().get(position - 1).getHotPost().getContentData());
+            } else {
+                holder.tvFive.setText(data.getData().getForumInfo().get(position - 1).getHotPost().getPostsTitle());
+            }
+            if (data.getData().getForumInfo().get(position - 1).getNewPost().getPostsTitle() == "") {
+                holder.tvSix.setText(data.getData().getForumInfo().get(position - 1).getNewPost().getContentData());
+            } else {
+                holder.tvSix.setText(data.getData().getForumInfo().get(position - 1).getNewPost().getPostsTitle());
+            }
+            holder.tvSeven.setText(String.valueOf(data.getData().getForumInfo().get(position - 1).getOneDayAddNum() + "条更新> "));
         }
-
-
         return reusableView;
     }
 
     @Override
     public int getCount() {
-        return data.getData().getForumInfo().size()+2;
+        return data.getData().getForumInfo().size() + 2;
     }
 
     @Override
@@ -104,9 +111,9 @@ public class MyFancyCoverFlowAdapter extends FancyCoverFlowAdapter {
     }
 
 
-    static  class ViewHolder{
-        ImageView ivOne,ivTwo,ivBack;
-        TextView tvOne,tvTwo,tvThree,tvFour,tvFive,tvSix,tvSeven;
+    static class ViewHolder {
+        ImageView ivOne, ivTwo, ivBack;
+        TextView tvOne, tvTwo, tvThree, tvFour, tvFive, tvSix, tvSeven;
         LinearLayout linearLayout;
     }
 }

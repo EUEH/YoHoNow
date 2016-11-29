@@ -67,7 +67,11 @@ public class ComAdapter extends BaseAdapter {
         //转化为string类型
         holder.tvThree.setText(Tolls.intoTime(String.valueOf(data.getData().getList().get(i).getCreateTime())));
         holder.tvFour.setText(data.getData().getList().get(i).getPostsTitle());
-        holder.tvFive.setText(data.getData().getList().get(i).getBlocks().get(0).getContentData());
+
+        if (Tolls.subStrings(data.getData().getList().get(i).getBlocks().get(0).getContentData()) == ""){
+            holder.tvFive.setText(data.getData().getList().get(i).getBlocks().get(0).getContentData());
+        }
+
         holder.tvSeven.setText(data.getData().getList().get(i).getForumName());
         holder.tvEight.setText(String.valueOf(data.getData().getList().get(i).getComment()));
         holder.tvNine.setText(String.valueOf(data.getData().getList().get(i).getPraise()));
