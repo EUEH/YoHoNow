@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.eueh.yohonow.SearchActivity">
+    tools:context="com.eueh.yohonow.Search.SearchActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,24 +27,26 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="8dp"
                 android:background="@mipmap/search_1" />
+
             <EditText
-                android:textSize="14sp"
-                android:layout_marginLeft="2dp"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:hint="请输入搜索关键字"
                 android:layout_width="285dp"
                 android:layout_height="match_parent"
-                android:background="@null" />
+                android:layout_marginLeft="2dp"
+                android:background="@null"
+                android:hint="请输入搜索关键字"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textSize="14sp" />
+
             <LinearLayout
-                android:background="@color/coloWhite"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/coloWhite">
 
                 <ImageView
-                    android:layout_marginTop="7dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="17dp"
                     android:layout_height="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
                     android:background="@mipmap/search_2" />
 
             </LinearLayout>
@@ -52,5 +55,17 @@
 
 
     </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:background="@color/coloWhite"
+        app:tabMode="scrollable"
+        android:id="@+id/tab_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

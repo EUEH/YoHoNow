@@ -1,11 +1,13 @@
 package com.eueh.yohonow;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.eueh.yohonow.base.BaseActivity;
@@ -19,6 +21,7 @@ import com.eueh.yohonow.video.VideoFragment;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton rbtnRecommend, rbtnColumn, rbtnCommunity, rbtnVideo, rbtnMagazine;
     private DrawerLayout drawerLayout;
+    private ImageView ivLogin;
 
 
     @Override
@@ -33,7 +36,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         rbtnCommunity = (RadioButton) findViewById(R.id.rbtn_community);
         rbtnVideo = (RadioButton) findViewById(R.id.rbtn_video);
         rbtnMagazine = (RadioButton) findViewById(R.id.rbtn_magazine);
+        ivLogin = (ImageView) findViewById(R.id.iv_main_login);
 
+        ivLogin.setOnClickListener(this);
         rbtnRecommend.setOnClickListener(this);
         rbtnColumn.setOnClickListener(this);
         rbtnCommunity.setOnClickListener(this);
@@ -73,6 +78,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.rbtn_magazine:
                 replace(new MagazineFragment());
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                break;
+
+            case R.id.iv_main_login:
+                Intent intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.in_from_right,R.anim.out_to_bot);
                 break;
         }
 

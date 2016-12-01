@@ -52,12 +52,12 @@
         "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_dark.xml",
         "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable/abc_text_cursor_material.xml",
