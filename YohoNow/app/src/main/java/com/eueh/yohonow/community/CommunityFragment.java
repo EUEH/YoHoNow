@@ -92,7 +92,7 @@ public class CommunityFragment extends BaseFragment {
                 mMyFancyCoverFlowAdapter.setData(response);
                 mfancyCoverFlow.setAdapter(mMyFancyCoverFlowAdapter);
                 mMyFancyCoverFlowAdapter.notifyDataSetChanged();
-
+                mfancyCoverFlow.setSelection(1);
                 mfancyCoverFlow.setUnselectedAlpha(1);
                 mfancyCoverFlow.setUnselectedSaturation(0.5f);
                 mfancyCoverFlow.setUnselectedScale(0.3f);

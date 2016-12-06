@@ -38,6 +38,8 @@
                 android:background="@mipmap/yohologme" />
 
             <TextView
+                android:clickable="true"
+                android:id="@+id/tv_mid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -50,6 +52,8 @@
                 android:layout_marginTop="30dp">
 
                 <EditText
+                    android:textCursorDrawable="@null"
+                    android:textColor="@color/coloWhite"
                     android:id="@+id/et_login_top"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
@@ -64,7 +68,6 @@
                 <ImageView
                     android:id="@+id/iv_top_close"
                     android:layout_width="40dp"
-
                     android:layout_height="40dp"
                     android:layout_marginLeft="300dp"
                     android:layout_marginTop="3dp"
@@ -72,12 +75,16 @@
                     android:clickable="true" />
             </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
 
                 <EditText
+                    android:inputType="numberPassword"
+                    android:textColor="@color/coloWhite"
+                    android:id="@+id/et_login_bot"
+                    android:textCursorDrawable="@null"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginLeft="14dp"
@@ -87,10 +94,28 @@
                     android:hint="密码"
                     android:singleLine="true"
                     android:textColorHint="#808080" />
+                <ImageView
+                    android:id="@+id/iv_bot_close"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="270dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@mipmap/deleteformeone"
+                    android:clickable="true" />
+                <CheckBox
+                    android:id="@+id/check_login"
+                    android:layout_marginTop="19dp"
+                    android:button="@null"
+                    android:background="@drawable/select_password"
+                    android:layout_marginLeft="310dp"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <Button
+                android:background="@drawable/shape_button"
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
@@ -223,6 +248,7 @@
                 android:visibility="gone" />
 
             <TextView
+                android:id="@+id/tv_jump"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"

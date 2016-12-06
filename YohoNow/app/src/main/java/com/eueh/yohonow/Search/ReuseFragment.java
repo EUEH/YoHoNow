@@ -44,9 +44,11 @@ public class ReuseFragment extends BaseFragment{
         NetHelper.MyRequest(URLSEARCHCONTENT, BeanIn.class, new NetListener<BeanIn>() {
             @Override
             public void successListener(BeanIn response) {
+
                 ReuseAdapter adapter = new ReuseAdapter(getContext());
                 adapter.setData(response);
                 listView.setAdapter(adapter);
+
             }
 
             @Override

@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Search.SearchActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SetActivity" />
+        <activity android:name=".column.columnson.ColSonActivity"></activity>
     </application>
 
 </manifest>

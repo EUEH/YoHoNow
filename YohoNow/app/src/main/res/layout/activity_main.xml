@@ -134,6 +134,7 @@
                 android:src="@mipmap/main_evaluation" />
 
             <ImageView
+                android:id="@+id/iv_set"
                 android:layout_width="78dp"
                 android:layout_height="73dp"
                 android:layout_marginLeft="12dp"

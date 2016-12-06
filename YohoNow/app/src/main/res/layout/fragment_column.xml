@@ -5,10 +5,9 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:background="@color/coloWhite"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="50dp"
+        android:background="@color/coloWhite">
 
         <TextView
             android:layout_width="match_parent"
@@ -19,18 +18,41 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="@dimen/fragment_col_one"
+
+
+    <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+        android:id="@+id/swipe_to_load_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_height="match_parent">
 
-        <ListView
-            android:layout_marginLeft="@dimen/fragment_col_one"
-            android:layout_marginRight="@dimen/fragment_col_one"
-            android:id="@+id/lv_column"
+        <com.eueh.yohonow.loadingdata.Refresh
+            android:id="@id/swipe_refresh_header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="50dp"
+            android:gravity="center" />
 
-    </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="@dimen/fragment_col_one"-->
+            <!--&gt;-->
+
+            <ListView
+                android:id="@id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/fragment_col_one"
+                android:layout_marginRight="@dimen/fragment_col_one" />
+
+        <!--</LinearLayout>-->
+
+        <com.eueh.yohonow.loadingdata.Load
+            android:id="@id/swipe_load_more_footer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center" />
+
+    </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
+
 </LinearLayout>

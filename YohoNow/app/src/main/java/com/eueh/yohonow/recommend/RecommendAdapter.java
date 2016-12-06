@@ -156,6 +156,10 @@ public class RecommendAdapter extends BaseAdapter {
 
         return view;
     }
+    public void addMore(BeanRec dataMine){
+        data.getData().addAll(dataMine.getData());
+        notifyDataSetChanged();
+    }
 
     class ViewHolderOne {
         private ImageView ivone, ivtwo, ivthree;
@@ -203,6 +207,7 @@ public class RecommendAdapter extends BaseAdapter {
             tvitemthreebot = (TextView) view.findViewById(R.id.rec_item_three_tv_bot);
         }
     }
+
 
     class ViewHolderFour {
 

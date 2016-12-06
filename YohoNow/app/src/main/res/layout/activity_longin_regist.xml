@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+<TextView
+    android:layout_marginTop="17sp"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="注册YoHo!Family"/>
+        <ImageView
+            android:id="@+id/iv_regist"
+            android:background="@mipmap/closelogone"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="310dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/shape_edittext"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:text="国家和地区"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_marginLeft="90dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="澳大利亚"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/shape_edittext"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        >
+       <EditText
+           android:textColor="@color/white"
+           android:id="@+id/et_number"
+           android:background="@null"
+           android:textCursorDrawable="@null"
+           android:drawableLeft="@mipmap/regist86"
+           android:textSize="18sp"
+           android:textColorHint="@color/white"
+           android:hint="手机号"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" />
+        <ImageView
+
+            android:visibility="gone"
+            android:id="@+id/iv_regist_in"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="290dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/deleteformeone"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_regist"
+        android:background="@drawable/shape_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_regist_next"
+            android:text="下一步"
+            android:background="@drawable/shape_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:text="YoHo!Family账号可登陆YoHoBuy!有货、YoHo!Now及SHOW"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content" />
+    
+</LinearLayout>

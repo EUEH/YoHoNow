@@ -58,7 +58,10 @@ public class MagPagAdapter extends BaseAdapter {
         Picasso.with(context).load(data.getData().getWallpaperList().get(i).getImages().get(0).getThumbImage()).into(holder.ivOne);
         Picasso.with(context).load(data.getData().getWallpaperList().get(i).getImages().get(1).getThumbImage()).into(holder.ivThree);
         Picasso.with(context).load(data.getData().getWallpaperList().get(i).getImages().get(2).getThumbImage()).into(holder.ivTwo);
-        Picasso.with(context).load(data.getData().getWallpaperList().get(i).getImages().get(3).getThumbImage()).into(holder.ivFour);
+        if (data.getData().getWallpaperList().get(i).getImages().size() == 4){
+            Picasso.with(context).load(data.getData().getWallpaperList().get(i).getImages().get(3).getThumbImage()).into(holder.ivFour);
+
+        }
 
 
         return view;

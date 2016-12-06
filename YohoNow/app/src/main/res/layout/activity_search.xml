@@ -27,15 +27,31 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="8dp"
                 android:background="@mipmap/search_1" />
-
-            <EditText
+            <RelativeLayout
                 android:layout_width="285dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:background="@null"
-                android:hint="请输入搜索关键字"
-                android:textCursorDrawable="@drawable/color_cursor"
-                android:textSize="14sp" />
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="285dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:hint="请输入搜索关键字"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textSize="14sp" />
+                <ImageView
+                    android:id="@+id/iv_search_left"
+                    android:visibility="gone"
+                    android:layout_marginLeft="255dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@mipmap/search_close"/>
+
+
+            </RelativeLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,6 +59,7 @@
                 android:background="@color/coloWhite">
 
                 <ImageView
+                    android:id="@+id/iv_search_right"
                     android:layout_width="17dp"
                     android:layout_height="17dp"
                     android:layout_marginLeft="10dp"
@@ -55,6 +72,19 @@
 
 
     </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_sp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这里就可以开始存储啦啦啦啦啦啦"/>
+    </LinearLayout>
 
     <android.support.design.widget.TabLayout
         android:background="@color/coloWhite"
@@ -64,8 +94,12 @@
         android:layout_height="wrap_content" />
 
     <android.support.v4.view.ViewPager
+        android:layout_below="@+id/tab_search"
         android:id="@+id/vp_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+</RelativeLayout>
+
 
 </LinearLayout>

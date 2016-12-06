@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eueh.yohonow.R;
 import com.squareup.picasso.Picasso;
@@ -20,6 +21,7 @@ import com.squareup.picasso.Picasso;
 public class ColumnAdapter extends BaseAdapter {
     private BeanCol data;
     private Context context;
+    private int position;
 
     public ColumnAdapter(Context context) {
         this.context = context;
@@ -47,6 +49,7 @@ public class ColumnAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        position = i;
         ViewHolder holder = null;
         if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_col_body, viewGroup, false);
@@ -60,6 +63,10 @@ public class ColumnAdapter extends BaseAdapter {
         holder.tvbodybot.setText("更新至"+data.getData().get(i).getTotal()+"篇");
 
         return view;
+    }
+    public void addMore(BeanCol datanew){
+        data.getData().addAll(datanew.getData());
+        notifyDataSetChanged();
     }
 
     class ViewHolder {

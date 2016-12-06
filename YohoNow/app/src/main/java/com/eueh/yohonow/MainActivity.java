@@ -21,7 +21,7 @@ import com.eueh.yohonow.video.VideoFragment;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton rbtnRecommend, rbtnColumn, rbtnCommunity, rbtnVideo, rbtnMagazine;
     private DrawerLayout drawerLayout;
-    private ImageView ivLogin;
+    private ImageView ivLogin,ivSet;
 
 
     @Override
@@ -37,7 +37,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         rbtnVideo = (RadioButton) findViewById(R.id.rbtn_video);
         rbtnMagazine = (RadioButton) findViewById(R.id.rbtn_magazine);
         ivLogin = (ImageView) findViewById(R.id.iv_main_login);
+        ivSet = (ImageView) findViewById(R.id.iv_set);
 
+        ivSet.setOnClickListener(this);
         ivLogin.setOnClickListener(this);
         rbtnRecommend.setOnClickListener(this);
         rbtnColumn.setOnClickListener(this);
@@ -55,7 +57,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
-    //Rbtn监听
+    //监听
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -80,9 +82,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 break;
 
+            //抽屉登陆监听
             case R.id.iv_main_login:
                 Intent intent = new Intent(this,LoginActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.in_from_right,R.anim.out_to_bot);
+                break;
+            //抽屉设置监听
+            case R.id.iv_set:
+                Intent intentSet = new Intent(this,SetActivity.class);
+                startActivity(intentSet);
                 overridePendingTransition(R.anim.in_from_right,R.anim.out_to_bot);
                 break;
         }

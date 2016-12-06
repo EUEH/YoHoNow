@@ -6,43 +6,71 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/coloWhite"
-        android:orientation="horizontal">
+        android:layout_height="50dp">
 
-        <ImageView
-            android:id="@+id/iv_btn_drawer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@mipmap/toolbar_mine" />
+            android:background="@color/coloWhite"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:gravity="center"
-            android:text="@string/text_name_four"
-            android:textSize="@dimen/fragment_col_two"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/iv_btn_drawer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@mipmap/toolbar_mine" />
 
-        <ImageView
-            android:id="@+id/iv_rec_right"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@mipmap/toolbar_search" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="@string/text_name_four"
+                android:textSize="@dimen/fragment_col_two"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_rec_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@mipmap/toolbar_search" />
+        </LinearLayout>
+
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv_recommend"
+
+    <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:divider="@null"></ListView>
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_to_load_layout">
+
+        <com.eueh.yohonow.loadingdata.Refresh
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@id/swipe_refresh_header"
+            android:gravity="center"
+            />
+        <ListView
+            android:id="@id/swipe_target"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"/>
+
+        <com.eueh.yohonow.loadingdata.Load
+            android:id="@id/swipe_load_more_footer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            />
+
+
+    </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
 
 
 </LinearLayout>
