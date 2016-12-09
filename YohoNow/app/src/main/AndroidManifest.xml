@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".welcome.WelcomeFirstActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,16 @@
         <activity android:name=".Search.SearchActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SetActivity" />
-        <activity android:name=".column.columnson.ColSonActivity"></activity>
+        <activity android:name=".column.columnson.ColSonActivity" />
+        <activity android:name=".column.SonIn.SonInActivity" />
+        <activity android:name=".video.videoviedeo.videovideoson.VideoVideoSonActivity" />
+        <activity android:name=".Search.SearchSon.SearchSonActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".welcome.WelcomeActivity" android:launchMode="singleTask" />
+        <activity
+            android:name=".CollectActivity"
+            android:theme="@style/myTransparent" />
+        <activity android:name=".gridview.InCollectActivity"></activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -13,17 +14,19 @@ import com.android.volley.VolleyError;
 import com.bumptech.glide.Glide;
 import com.eueh.yohonow.R;
 import com.eueh.yohonow.base.BaseActivity;
+import com.eueh.yohonow.column.SonIn.SonInActivity;
 import com.eueh.yohonow.volley.NetHelper;
 import com.eueh.yohonow.volley.NetListener;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
 
-public class ColSonActivity extends BaseActivity {
+public class ColSonActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     private ListView listView;
     private ColSonAdapter adapter;
     private ImageView iv;
     private String url;
+    private ColSonBean dataSon;
 
 
     @Override
@@ -34,12 +37,10 @@ public class ColSonActivity extends BaseActivity {
     @Override
     public void initView() {
         listView = (ListView) findViewById(R.id.lv_colSon);
+        listView.setOnItemClickListener(this);
         View viewHead = LayoutInflater.from(this).inflate(R.layout.item_col_son_head,null);
         iv = (ImageView) viewHead.findViewById(R.id.iv_col_son_head);
-
         listView.addHeaderView(viewHead);
-
-
         adapter = new ColSonAdapter(this);
         listView.setAdapter(adapter);
 
@@ -55,7 +56,7 @@ public class ColSonActivity extends BaseActivity {
         Glide.with(this).load(url).into(iv);
         Log.d("ColSonActivity", url);
 
-        String LOOKBOOKBANNER = "http://new.yohoboys.com/yohoboyins/v5/channel/lookbookbanner";
+    //    String LOOKBOOKBANNER = "http://new.yohoboys.com/yohoboyins/v5/channel/lookbookbanner";
         String LOOKBOOK = "http://new.yohoboys.com/yohoboyins/v5/channel/lookbook";
 
         //map
@@ -84,6 +85,7 @@ public class ColSonActivity extends BaseActivity {
             @Override
             public void successListener(ColSonBean response) {
                 adapter.setData(response);
+                dataSon = response;
             }
 
             @Override
@@ -92,5 +94,18 @@ public class ColSonActivity extends BaseActivity {
             }
         },mapSure);
 
+    }
+
+    //listview 的点击事件,传入下一层(3J)
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        //i 需要减1  顺序才能一样
+        String idSon = dataSon.getData().getContent().get(i-1).getId();
+        String cidSon = dataSon.getData().getContent().get(i-1).getCid();
+
+        Intent intent = new Intent(this, SonInActivity.class);
+        intent.putExtra("idSon",idSon);
+        intent.putExtra("cidSon",cidSon);
+        startActivity(intent);
     }
 }

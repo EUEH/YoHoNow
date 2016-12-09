@@ -1,18 +1,23 @@
 package com.eueh.yohonow;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eueh.yohonow.base.BaseActivity;
 import com.eueh.yohonow.column.ColumnFragment;
 import com.eueh.yohonow.community.CommunityFragment;
+import com.eueh.yohonow.gridview.InCollectActivity;
 import com.eueh.yohonow.magazine.MagazineFragment;
 import com.eueh.yohonow.recommend.RecommendFragment;
 import com.eueh.yohonow.video.VideoFragment;
@@ -22,6 +27,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RadioButton rbtnRecommend, rbtnColumn, rbtnCommunity, rbtnVideo, rbtnMagazine;
     private DrawerLayout drawerLayout;
     private ImageView ivLogin,ivSet;
+    private TextView tvCollectIn;
+
+    private long exitTime = 0;
 
 
     @Override
@@ -38,7 +46,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         rbtnMagazine = (RadioButton) findViewById(R.id.rbtn_magazine);
         ivLogin = (ImageView) findViewById(R.id.iv_main_login);
         ivSet = (ImageView) findViewById(R.id.iv_set);
+        tvCollectIn = (TextView) findViewById(R.id.tv_collect_in);
 
+        tvCollectIn.setOnClickListener(this);
         ivSet.setOnClickListener(this);
         ivLogin.setOnClickListener(this);
         rbtnRecommend.setOnClickListener(this);
@@ -94,6 +104,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intentSet);
                 overridePendingTransition(R.anim.in_from_right,R.anim.out_to_bot);
                 break;
+            //收藏的点击事件
+            case R.id.tv_collect_in:
+                Intent intenttwo = new Intent(MainActivity.this,InCollectActivity.class);
+                startActivity(intenttwo);
+                break;
         }
 
     }
@@ -109,5 +124,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
         drawerLayout.openDrawer(Gravity.LEFT);
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            exit();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+    private void  exit(){
+        if (System.currentTimeMillis() - exitTime > 2000){
+            Toast.makeText(this, "もう少しだけでいい あと少しだけでいい ", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        }else {
+            finish();
+            System.exit(0);
+        }
     }
 }

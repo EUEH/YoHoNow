@@ -68,12 +68,12 @@
         "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png",
-        "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
         "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png",
+        "source": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/res/drawable-xxhdpi-v4/abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "/Users/dllo/Desktop/GitEueh/YoHoNow/YohoNow/coverflow/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",

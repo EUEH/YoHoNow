@@ -176,21 +176,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void dialogMe() {
-//        final NormalAlertDialog dialog = new NormalAlertDialog.Builder(LoginActivity.this).setHeight(0.27f)
-//                .setWidth(0.87f).setTitleVisible(true).setTitleText("YoHo!Family")
-//                .setTitleTextColor(R.color.black)
-//                .setContentText("YoHo!Family账号可登陆YoHoBuy!有货YoHo!Now及SHOW")
-//                .setContentTextColor(R.color.black).setSingleMode(true)
-//                .setSingleButtonText("确定").setSingleButtonTextColor(R.color.black)
-//                .setCanceledOnTouchOutside(true)
-//                .setSingleListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//
-//                    }
-//                }).build();
-//        dialog.show();
-
 
         final NormalAlertDialog.Builder builder = new NormalAlertDialog.Builder(this);
         builder.setHeight(0.3f);

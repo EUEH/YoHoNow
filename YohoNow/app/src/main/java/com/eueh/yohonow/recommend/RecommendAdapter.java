@@ -10,7 +10,11 @@ import android.widget.TextView;
 
 import com.eueh.yohonow.R;
 import com.eueh.yohonow.Tolls;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dllo on 16/11/24.
@@ -117,21 +121,23 @@ public class RecommendAdapter extends BaseAdapter {
         }
         switch (getItemViewType(i)) {
             case TYPE_ONE:
-                Picasso.with(context).load(data.getData().get(i).getParams().get(0).getImage()).into(holderOne.ivone);
+                if (!data.getData().get(i).getParams().get(0).getImage().isEmpty()){
+                    Picasso.with(context).load(data.getData().get(i).getParams().get(0).getImage()).into(holderOne.ivone);
+                }
                 Picasso.with(context).load(data.getData().get(i).getParams().get(1).getImage()).into(holderOne.ivtwo);
                 Picasso.with(context).load(data.getData().get(i).getParams().get(2).getImage()).into(holderOne.ivthree);
 
                 holderOne.tvonefirst.setText(data.getData().get(i).getParams().get(0).getTitle());
-                holderOne.tvonesecond.setText("#"+data.getData().get(i).getParams().get(0).getTag().get(0).getTag_name());
+
                 holderOne.tvonethird.setText(Tolls.intoTime(data.getData().get(i).getParams().get(0).getCreate_time()));
 
 
                 holderOne.tvtwofirst.setText(data.getData().get(i).getParams().get(1).getTitle());
-                holderOne.tvtwosecond.setText("#"+data.getData().get(i).getParams().get(1).getTag().get(0).getTag_name());
+
                 holderOne.tvtwothird.setText(Tolls.intoTime(data.getData().get(i).getParams().get(1).getCreate_time()));
 
                 holderOne.tvthreefirst.setText(data.getData().get(i).getParams().get(2).getTitle());
-                holderOne.tvthreesecond.setText("#"+data.getData().get(i).getParams().get(2).getTag().get(0).getTag_name());
+
                 holderOne.tvthreethird.setText(Tolls.intoTime(data.getData().get(i).getParams().get(2).getCreate_time()));
 
 
@@ -139,7 +145,6 @@ public class RecommendAdapter extends BaseAdapter {
             case TYPE_TWO:
                 Picasso.with(context).load(data.getData().get(i).getParams().get(0).getImage()).into(holderTwo.ivitemttwo);
                 holderTwo.tvitemtwotop.setText(data.getData().get(i).getParams().get(0).getTitle());
-                holderTwo.tvitemtwoleft.setText("#"+data.getData().get(i).getParams().get(0).getTag().get(0).getTag_name());
                 holderTwo.tvitemtworight.setText(Tolls.intoTime(data.getData().get(i).getParams().get(0).getCreate_time()));
 
                 break;

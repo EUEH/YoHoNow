@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_son"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.eueh.yohonow.Search.SearchSon.SearchSonActivity">
+<LinearLayout
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="49dp">
+    <ImageView
+        android:id="@+id/iv_finish"
+        android:background="@mipmap/hahahhahaone"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/hahahhatwo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/hahahthree"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp" />
+</LinearLayout>
+    <ImageView
+        android:scaleType="fitCenter"
+        android:id="@+id/iv_mine"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_mainone"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_maintwo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_mainthree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_mainfour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <WebView
+        android:layout_marginTop="6dp"
+        android:id="@+id/web_mine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</LinearLayout>

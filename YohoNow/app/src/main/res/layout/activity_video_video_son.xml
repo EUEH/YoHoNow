@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_video_video_son"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.eueh.yohonow.video.videoviedeo.videovideoson.VideoVideoSonActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/iv_finish_me"
+        android:background="@mipmap/hahahhahaone"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp" />
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/hahahhatwo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/hahahthree"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp" />
+</LinearLayout>
+    <RelativeLayout
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <VideoView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:id="@+id/video_me"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:background="@color/white"
+            android:id="@+id/tv_top_me"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_left_me"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+           />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_right_me"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <WebView
+
+        android:id="@+id/tv_vebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

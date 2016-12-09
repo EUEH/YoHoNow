@@ -123,7 +123,6 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
         value = gson.toJson(map).toString();
         mapnew = new HashMap<>();
         mapnew.put("parameters", value);
-        Log.d("吱吱吱", map.get("num"));
 
     }
 
@@ -142,6 +141,7 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
             @Override
             public void errorListener(VolleyError error) {
 
+               // Log.d("RecommendFragment", error.getMessage());
             }
         }, mapnew);
 
@@ -200,7 +200,7 @@ public class RecommendFragment extends BaseFragment implements View.OnClickListe
         banner.setOnBannerClickListener(new OnBannerClickListener() {
             @Override
             public void OnBannerClick(int position) {
-                Toast.makeText(getContext(), "qunimade", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "僕らタイムフライヤー 君を知っていたんだ", Toast.LENGTH_SHORT).show();
             }
         });
     }

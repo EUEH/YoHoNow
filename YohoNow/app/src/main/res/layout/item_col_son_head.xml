@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="就这破项目,烂的一*"/>
+            android:text="君のいない 世界など"/>
     </LinearLayout>
 
 </LinearLayout>

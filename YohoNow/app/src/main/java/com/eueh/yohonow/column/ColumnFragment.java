@@ -1,6 +1,7 @@
 package com.eueh.yohonow.column;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,6 +50,7 @@ public class ColumnFragment extends BaseFragment implements OnRefreshListener, O
     public void initView(View view) {
 
         swipeToLoadLayout = (SwipeToLoadLayout) view.findViewById(R.id.swipe_to_load_layout);
+
         swipeToLoadLayout.setOnRefreshListener(this);
         swipeToLoadLayout.setOnLoadMoreListener(this);
 
@@ -189,10 +191,14 @@ public class ColumnFragment extends BaseFragment implements OnRefreshListener, O
                     num = response.getData().get(response.getData().size() - 1).getCreate_time();
                 }
 
+                Log.d("ColumnFragment", num);
                 //更新map
                 map.put("lastTime", num);
                 values = gson.toJson(map).toString();
                 mapsure.put("parameters", values);
+
+
+
 
 
             }
@@ -204,10 +210,12 @@ public class ColumnFragment extends BaseFragment implements OnRefreshListener, O
         }, mapsure);
     }
 
+    //next
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        String id = data.getData().get(i).getId();
-        String url = data.getData().get(i).getCover();
+        //i 需要减1  顺序才能一样
+        String id = data.getData().get(i-1).getId();
+        String url = data.getData().get(i-1).getCover();
 
         Intent intent = new Intent(getContext(), ColSonActivity.class);
         intent.putExtra("id",id);
